@@ -3,13 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// UI окно сервера
+// UI РѕРєРЅРѕ СЃРµСЂРІРµСЂР°
 public class ServerUIWindow : BaseUIWindow
 {
-    [Inject] private MirrorMessagesWrapper _mirrorMessagesWrapper;      // Прослойка для сообщений Mirror
+    [Inject] private MirrorMessagesWrapper _mirrorMessagesWrapper;      // РџСЂРѕСЃР»РѕР№РєР° РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ Mirror
 
-    [SerializeField] private TMP_InputField _helloMessageInputField;    // Поле ввода текста сообщения HelloMessage для отправки клиентам
-    [SerializeField] private Button _helloMessageSendButton;            // Кнопка отправки сообщения HelloMessage клиентам
+    [SerializeField] private TMP_InputField _helloMessageInputField;    // РџРѕР»Рµ РІРІРѕРґР° С‚РµРєСЃС‚Р° СЃРѕРѕР±С‰РµРЅРёСЏ HelloMessage РґР»СЏ РѕС‚РїСЂР°РІРєРё РєР»РёРµРЅС‚Р°Рј
+    [SerializeField] private Button _helloMessageSendButton;            // РљРЅРѕРїРєР° РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ HelloMessage РєР»РёРµРЅС‚Р°Рј
 
     protected override void Init()
     {
@@ -21,12 +21,12 @@ public class ServerUIWindow : BaseUIWindow
         _helloMessageSendButton.onClick.RemoveListener(OnHelloMessageSendButtonClick);
     }
 
-    // При нажатии кнопки отправки сообщения HelloMessage клиентам
+    // РџСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё РѕС‚РїСЂР°РІРєРё СЃРѕРѕР±С‰РµРЅРёСЏ HelloMessage РєР»РёРµРЅС‚Р°Рј
     private void OnHelloMessageSendButtonClick()
     {
-        // Отправить сообщение HelloMessage с текстом из _helloMessageInputField всем подписанным клиентам
+        // РћС‚РїСЂР°РІРёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ HelloMessage СЃ С‚РµРєСЃС‚РѕРј РёР· _helloMessageInputField РІСЃРµРј РїРѕРґРїРёСЃР°РЅРЅС‹Рј РєР»РёРµРЅС‚Р°Рј
         HelloMessage msg = new HelloMessage { Text = _helloMessageInputField.text };
-        _mirrorMessagesWrapper.SendToSubscribers(msg);  // Вместо NetworkServer.SendToAll(msg);
+        _mirrorMessagesWrapper.SendToSubscribers(msg);  // Р’РјРµСЃС‚Рѕ NetworkServer.SendToAll(msg);
         Debug.Log($"Server sent HelloMessage to all subscribing clients: {msg.Text}");
     }
 }

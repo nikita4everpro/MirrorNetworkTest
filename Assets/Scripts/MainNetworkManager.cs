@@ -2,14 +2,14 @@ using Zenject;
 using Mirror;
 using UnityEngine;
 
-// Основной NetworkManager
+// РћСЃРЅРѕРІРЅРѕР№ NetworkManager
 public class MainNetworkManager : NetworkManager
 {
-    [Inject] private MirrorMessagesWrapper _mirrorMessagesWrapper;  // Прослойка для сообщений Mirror
+    [Inject] private MirrorMessagesWrapper _mirrorMessagesWrapper;  // РџСЂРѕСЃР»РѕР№РєР° РґР»СЏ СЃРѕРѕР±С‰РµРЅРёР№ Mirror
 
     [Header("UI")]
-    [SerializeField] private ServerUIWindow _serverUIWindow;        // UI окно сервера
-    [SerializeField] private ClientUIWindow _clientUIWindow;        // UI окно клиента
+    [SerializeField] private ServerUIWindow _serverUIWindow;        // UI РѕРєРЅРѕ СЃРµСЂРІРµСЂР°
+    [SerializeField] private ClientUIWindow _clientUIWindow;        // UI РѕРєРЅРѕ РєР»РёРµРЅС‚Р°
 
     public override void OnStartServer()
     {

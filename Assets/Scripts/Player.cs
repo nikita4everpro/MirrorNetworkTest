@@ -1,7 +1,7 @@
 using Mirror;
 using UnityEngine;
 
-// Объект игрока
+// РћР±СЉРµРєС‚ РёРіСЂРѕРєР°
 public class Player : NetworkBehaviour
 {
     [SerializeField] private float _movementSpeed = 5;
@@ -9,7 +9,7 @@ public class Player : NetworkBehaviour
     {
         if (isOwned == true)
         {
-            // Перемещаем объект
+            // РџРµСЂРµРјРµС‰Р°РµРј РѕР±СЉРµРєС‚
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
             float speed = _movementSpeed * Time.deltaTime;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Базовый класс окна UI
+// Р‘Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ РѕРєРЅР° UI
 public abstract class BaseUIWindow : MonoBehaviour
 {
     private void Awake()
