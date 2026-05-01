@@ -90,7 +90,5 @@ public class MirrorMessagesWrapper
 
         // Сообщаем серверу, что мы хотим это получать
         NetworkClient.Send(new UnsubscribeMessage { MessageType = typeName });
-
-        Debug.Log("Unsubscribe!!!!!!!");
     }
 }
